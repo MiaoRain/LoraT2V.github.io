@@ -122,8 +122,24 @@ Tsinghua University</span>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Low-light image enhancement is a vital process that seeks to enhance the visibility and clarity of images taken under suboptimal lighting conditions. Traditional methods for low-light enhancement rely on altering illumination levels but struggle with local variations in lighting levels and complex scenes, often producing artifacts, color distortions, or unnatural appearances. Recent deep learning-based methods have improved performance through robust feature extraction but usually rely on single-domain datasets that cannot generalize to all lighting conditions present in real-life situations. To address these generalization challenges, we propose MDANet: a Multi-Stage Domain Adaptation framework that sequentially implements light, focus, and contextual domain adaptation. First, MDANet employs an Adaptive Lighting Enhancement Module that combines an innovative U-Net architecture with cross-domain contrastive learning for lighting invariance. Second, this framework utilizes large language models (LLMs) for context-aware adjustments while incorporating depth map constraints within an innovative Region-Focused Enhancement Module that selectively targets and processes key focal regions. Third, a Contextual Adaptation Module employs multitask meta-learning to ensure robustness and superior performance across a range of contextual scenarios.  Experimental results demonstrate that MDANet consistently outperforms both traditional and state-of-the-art methods by offering both improved image quality as well as generalization across diverse low-light scenarios. \textcolor{blue}{Experimental results show that MDANet achieves state-of-the-art performance across multiple datasets, including MUSIQ scores of 38.219 on LOL, 39.675 on SID, and 39.825 on RELLISUR, outperforming all compared methods in both perceptual and quantitative metrics.
-          </p>
+            The rapid advancements in text-to-image generation technologies based on diffu-
+sion models have paved the way for low-cost video editing applications. These
+methods, built on pretrained models, offer an efficient alternative to training
+resource-intensive video-specific models. However, achieving temporal consis-
+tency in these applications remains challenging due to the frame independence
+of text-to-image generation. Existing methods address this by fine-tuning tem-
+poral layers or propagating temporal features at inference time, but these ap-
+proaches either have significant training cost or often fall short in delivering
+high-quality, temporally coherent video outputs. In this paper, we propose a
+lightweight, universally applicable adaptor that leverages prompt learning and
+temporal-aware DDIM inversion to enhance video editing performance across a
+broad range of text-to-image diffusion-based algorithms with minimal training
+cost. Our approach introduces shared prompt tokens to improve editing flex-
+ibility and unshared frame-specific tokens to enforce cross-frame consistency,
+while the temporal-aware DDIM inversion further refines coherence across video
+frames. This adaptor seamlessly integrates into existing video editing pipelines,
+delivering significant improvements in temporal consistency and video quality,
+benefiting a wide spectrum of downstream video editing algorithms</p>
         </div>
       </div>
     </div>
@@ -137,12 +153,10 @@ Tsinghua University</span>
     <div class="container">
       <!-- Single image container -->
       <div class="item has-text-centered">
-        <img src="head.jpg" alt="MY ALT TEXT" />
+        <img src="loraoverview.jpg" alt="MY ALT TEXT" />
         <!-- Subtitle text container with centered text -->
         <p class="subtitle">
-          Results of different tasks, Task A and B aimed at decreasing it and some others aimed at increasing brightness, covering a range of scenes such
-          as stage performances, everyday environments, and medical images. The tasks, labeled A through E, involve modifying the brightness of a masked object
-          or area (main character, lady, blackboard, side representing evil, left lung) by a percentage ranging from 10% to 40%.
+          Overview of our proposed framework with a black swan example.
         </p>
       </div>
     </div>
@@ -157,11 +171,12 @@ Tsinghua University</span>
     <div class="container">
       <!-- Single image container -->
       <div class="item has-text-centered">
-        <img src="framework_all.png" alt="MY ALT TEXT" />
+        <img src="visualization.jpg" alt="MY ALT TEXT" />
         <!-- Subtitle text container with centered text -->
         <p class="subtitle">
-            This framework introduces a multi-stage domain adaptation approach for low-light image enhancement. It incorporates an Adaptive Lighting Enhancement Module (top) that learns light invariance through cross-domain contrastive learning, a Region-Focused Enhancement Module (middle) that leverages large language model prompts for high-level semantic information and depth images for spatial domain information to achieve selective key area improvement, and a Contextual Adaptation Module (bottom) that fine-tunes model responses to various lighting conditions using meta-learning and multi-scale LoRA layer strategies. Each module collaborates sequentially to achieve light, focus, and contextual domain adaptation, resulting in optimal visual enhancement and strong generalization capabilities.
-        </h2>
+            A comparison of video generation quality across different algorithms, with and
+without the use of an adapter.
+      </h2>
         </p>
       </div>
     </div>
@@ -175,11 +190,11 @@ Tsinghua University</span>
     <div class="container">
       <!-- Single image container -->
       <div class="item has-text-centered">
-        <img src="MC-Adapter.jpg" alt="MY ALT TEXT" />
+        <img src="token.jpg" alt="MY ALT TEXT" />
         <!-- Subtitle text container with centered text -->
         <p class="subtitle">
-            The MC-adapter reshapes and processes input features in parallel, combining them across branches while retaining original dimensions for refined output.
-        </h2>
+            Figure 4: Comparison of token configurations—remove shared, shared, and enhanced un-
+shared—using LPIPS, CLIP, and FID metrics.</h2>
         </p>
       </div>
     </div>
@@ -193,10 +208,12 @@ Tsinghua University</span>
     <div class="container">
       <!-- Single image container -->
       <div class="item has-text-centered">
-        <img src="comparison.png" alt="MY ALT TEXT" />
+        <img src="atten.jpg" alt="MY ALT TEXT" />
         <!-- Subtitle text container with centered text -->
         <p class="subtitle">
-            Visual comparison of different low-light image enhancement models using Exdark dataset.
+            Visualization of attention maps from Unet’s third upsampling block, comparing
+base and adapter models across 1000 timesteps. The corresponding timesteps from top to
+bottom are 1, 541, and 981.
         </h2>
         </p>
       </div>
@@ -213,10 +230,12 @@ Tsinghua University</span>
     <div class="container">
       <!-- Single image container -->
       <div class="item has-text-centered">
-        <img src="lol1.png" alt="MY ALT TEXT" />
+        <img src="token_appendix.jpg" alt="MY ALT TEXT" />
         <!-- Subtitle text container with centered text -->
         <p class="subtitle">
-            Visual comparison with other state-of-the-art methods on LOL1.
+            Visualization of token manipulation effects on image generation for a lion. ”En-
+hanced Unshared Tokens” combines shared and unshared embeddings, appending the shared
+token as a trainable parameter to strengthen representation.
         </h2>
         </p>
       </div>
@@ -231,10 +250,12 @@ Tsinghua University</span>
     <div class="container">
       <!-- Single image container -->
       <div class="item has-text-centered">
-        <img src="lol2.png" alt="MY ALT TEXT" />
+        <img src="feature.jpg" alt="MY ALT TEXT" />
         <!-- Subtitle text container with centered text -->
         <p class="subtitle">
-            Visual comparison with other advanced approaches on LOM and LOL2.
+                   Comparison of single-channel feature heatmaps with and without the adapter across
+frames and timesteps, with features from the attention layer in UNet blocks 4-11. Labels f1/f2
+denote adjacent frames, and t1/t2 represent timesteps (t1=932, t2=941) from the DDPM.
         </h2>
         </p>
       </div>
@@ -268,11 +289,12 @@ Tsinghua University</span>
     <div class="container">
       <!-- Single image container -->
       <div class="item has-text-centered">
-        <img src="low_light_centric.jpg" alt="MY ALT TEXT" />
+        <img src="timesteps.jpg" alt="MY ALT TEXT" />
         <!-- Subtitle text container with centered text -->
         <p class="subtitle">
-            The process of Region-Focused diffusion applied to a low-light image. The heatmap highlights the important regions in the image. A mask is generated from the heatmap, and the
-Region-Focused diffusion model enhances the relevant object in the final output.
+            Performance comparison of video generation methods evaluated using metrics across
+temporal-aware loss training ranges (0.5–1.0t, 0.8–1.0t, 0.9–1.0t) and adapter inference ranges
+(0.5–1.0t, 0.8–1.0t, 0.9–1.0t), with t set to 1000.
         </h2>
         </p>
       </div>
@@ -288,10 +310,11 @@ Region-Focused diffusion model enhances the relevant object in the final output.
     <div class="container">
       <!-- Single image container -->
       <div class="item has-text-centered">
-        <img src="refinement.jpg" alt="MY ALT TEXT" />
+        <img src="stepvis.jpg" alt="MY ALT TEXT" />
         <!-- Subtitle text container with centered text -->
         <p class="subtitle">
-            The process of image refinement using LLM-guided prompts. Starting from a dark image, the LLM generates prompts to guide the enhancement process.
+            Visual comparison of a 0.5–1.0t training range for temporal-aware loss with a
+0.9–1.0t adapter activation in inference range versus setting both to 0.5t(t = 1000).
         </h2>
         </p>
       </div>
@@ -306,12 +329,12 @@ Region-Focused diffusion model enhances the relevant object in the final output.
     <div class="container">
       <!-- Single image container -->
       <div class="item has-text-centered">
-        <img src="darkface.png" alt="MY ALT TEXT" />
+        <img src="kernel.jpg" alt="MY ALT TEXT" />
         <!-- Subtitle text container with centered text -->
         <p class="subtitle">
-            The effectiveness of face detection under low-light conditions is demonstrated through
-various methods. Compared to raw input, ZeroDCE, LLFlow, EnlightenGAN, Diffll, and Cle, the
-method "Ours + DSFD" produces the most precise and clear outcomes.
+            Comparison of step and kernel sizes N (·) within bilateral filtering inversion in the
+Stable Diffusion pipeline. The observed trends are consistent with those in vid2vid and three
+other algorithms (not shown due to space limitations).
       </h2>
         </p>
       </div>
