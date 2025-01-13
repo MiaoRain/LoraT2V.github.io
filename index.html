@@ -66,10 +66,7 @@
                   <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Jun Yin</a>,</span>    
                   <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Miao Zhang</a>,</span><sup>†</sup>
                   <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Xueqian Wang</a>
-                  
-                  <span class="author-block">
-                  <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Miao Zhang</a><sup>†</sup>
-                  </div>
+                
 
 
 
@@ -96,8 +93,7 @@
                 </span>
             
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Shenzhen International Graduate School
-Tsinghua University</span>
+                    <span class="author-block">University of Minnesota - Twin Cities, Peking University</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                     <span class="eql-cntrb"><small><br><sup>†</sup>Indicates Corresponding Author</small></span>
                   </div>
@@ -118,24 +114,14 @@ Tsinghua University</span>
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            The rapid advancements in text-to-image generation technologies based on diffu-
-sion models have paved the way for low-cost video editing applications. These
-methods, built on pretrained models, offer an efficient alternative to training
-resource-intensive video-specific models. However, achieving temporal consis-
-tency in these applications remains challenging due to the frame independence
-of text-to-image generation. Existing methods address this by fine-tuning tem-
-poral layers or propagating temporal features at inference time, but these ap-
-proaches either have significant training cost or often fall short in delivering
-high-quality, temporally coherent video outputs. In this paper, we propose a
-lightweight, universally applicable adaptor that leverages prompt learning and
-temporal-aware DDIM inversion to enhance video editing performance across a
-broad range of text-to-image diffusion-based algorithms with minimal training
-cost. Our approach introduces shared prompt tokens to improve editing flex-
-ibility and unshared frame-specific tokens to enforce cross-frame consistency,
-while the temporal-aware DDIM inversion further refines coherence across video
-frames. This adaptor seamlessly integrates into existing video editing pipelines,
-delivering significant improvements in temporal consistency and video quality,
-benefiting a wide spectrum of downstream video editing algorithms</p>
+            Recent advancements in text-to-image (T2I) generation using diffusion models have enabled cost-effective video-editing applications by leveraging pre-trained models, eliminating the need for resource-intensive training. However, the frame-independence of
+T2I generation often results in poor temporal consistency. Existing methods address this issue through temporal layer fine-tuning
+or inference-based temporal propagation, but these approaches suffer from high training costs or limited temporal coherence. To address these challenges, we propose a General and Efficient Adapter (GE-Adapter) that integrates temporal-spatial and semantic consistency with DDIM inversion. This framework introduces three key components: (1) Frame-based Temporal Consistency Blocks
+(FTC Blocks) to capture frame-specific features and enforce smooth inter-frame transitions via temporally-aware loss functions; (2)
+Channel-dependent Spatial Consistency Blocks (SCD Blocks) employing bilateral filters to enhance spatial coherence by reducing
+noise and artifacts; and (3) Token-based Semantic Consistency Module (TSC Module) to maintain semantic alignment using shared
+prompt tokens and frame-specific tokens. Our method significantly improves perceptual quality, text-image alignment, and temporal coherence, as demonstrated on the MSR-VTT dataset. Additionally, it achieves enhanced fidelity and frame-to-frame coherence,
+offering a practical solution for T2V editing.</p>
         </div>
       </div>
     </div>
